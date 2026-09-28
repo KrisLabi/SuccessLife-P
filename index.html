@@ -1,0 +1,1429 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SuccessLife - Daily Devotional &amp; Bible App</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#7b16ff',
+              'purple-dark': '#49048a',
+              'purple-deep': '#3d0277',
+              'purple-light': '#f3e8ff',
+              navy: '#2e0261'
+            }
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography-and-effects">/* Subtle background image overlay tuning */
+.hero-bg {
+    background-image: linear-gradient(to bottom, rgba(17, 10, 24, 0.45), rgba(15, 7, 22, 0.7)), url(hero-background.jpg);
+    background-size: cover;
+    background-position: center 30%
+    }
+.quote-card-shadow {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03)
+    }
+/* Custom subtle modal backdrop transition */
+.modal-backdrop {
+    transition: opacity 0.25s ease-out;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet" class=""></head>
+<body class="bg-[#f8f9fa] text-gray-800 font-sans antialiased selection:bg-purple-500 selection:text-white" style="font-family: &quot;Space Grotesk&quot;, sans-serif;">
+<!-- BEGIN: HeroAndHeaderSection -->
+<section class="hero-bg relative min-h-[780px] text-white flex flex-col justify-between" data-purpose="hero-banner" style="background-image: linear-gradient(rgba(14, 7, 23, 0.75), rgba(15, 6, 26, 0.88)), url(&quot;hero-background.jpg&quot;); background-size: cover; background-position: center center;">
+<!-- BEGIN: TopNavigation -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-black/20 backdrop-blur-md border-b border-white/10" id="main-header"><div class="w-full max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between" style="max-width: 1280px;"><a class="flex items-center gap-2.5 group" data-purpose="brand-logo" href="#"><div class="relative w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-tr from-purple-600 to-pink-500 shadow-md transition-transform duration-300 group-hover:scale-105"><svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 36 36"><path d="M18 2L20.8 11.2L30 14L20.8 16.8L18 26L15.2 16.8L6 14L15.2 11.2L18 2Z" fill="white" opacity="0.95"></path><circle cx="18" cy="18" fill="#fdf4ff" r="3.5"></circle></svg></div><div class="leading-none tracking-tight"><span class="text-xl font-bold text-white tracking-wide" style="font-family: Montserrat, sans-serif;">Success<span class="font-normal text-purple-300">Life</span></span></div></a><div class="flex items-center gap-8"><nav class="hidden md:flex items-center gap-2 text-sm font-semibold text-white" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 16px;"><a class="text-white px-3.5 py-1.5 font-semibold shadow-sm transition-all duration-200 hover:bg-[#8311d2]" href="#" style="border-radius: 8px; background-color: rgb(131, 17, 210);">Home</a><a class="text-white px-3.5 py-1.5 font-semibold transition-all duration-200 hover:bg-[#8311d2]" href="#quotes-section" style="border-radius: 8px;">Devotional</a><a class="text-white px-3.5 py-1.5 font-semibold transition-all duration-200 hover:bg-[#8311d2]" href="#articles-section" style="border-radius: 8px;">Articles</a><a class="text-white px-3.5 py-1.5 font-semibold transition-all duration-200 hover:bg-[#8311d2]" href="#courses-section" style="border-radius: 8px;">Courses</a><a class="text-white px-3.5 py-1.5 font-semibold transition-all duration-200 hover:bg-[#8311d2]" href="#podcasts-section" style="border-radius: 8px;">Podcasts</a><a class="text-white px-3.5 py-1.5 font-semibold transition-all duration-200 hover:bg-[#8311d2]" href="#app-showcase-download" style="border-radius: 8px;">Get App</a></nav><div class="flex items-center gap-3"><button aria-label="Search" class="w-10 h-10 bg-white/10 hover:bg-[#8311d2] text-white border border-white/20 flex items-center justify-center transition-all duration-200" style="border-radius: 8px;"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M16.65 11a5.65 5.65 0 11-11.3 0 5.65 5.65 0 0111.3 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button aria-label="User Account" class="w-10 h-10 bg-white/10 hover:bg-[#8311d2] text-white border border-white/20 flex items-center justify-center transition-all duration-200" style="border-radius: 8px;"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button aria-label="Toggle Mobile Menu" class="md:hidden w-10 h-10 bg-white/10 hover:bg-[#8311d2] text-white border border-white/20 flex items-center justify-center transition-all duration-200" style="border-radius: 8px;"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div></div></header>
+<!-- END: TopNavigation -->
+<!-- BEGIN: HeroBannerContent -->
+<div class="max-w-7xl mx-auto px-6 sm:px-8 pt-32 pb-20 w-full flex-1 flex flex-col justify-center items-start z-10" style="max-width: 1280px;">
+<div class="max-w-3xl">
+<!-- Devotion Category Pill -->
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-xs font-medium text-white mb-6">
+          Today's Devotion
+        </div>
+<!-- Hero Headline -->
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-5 leading-tight font-serif" style="font-family: Montserrat, sans-serif; font-size: 55px; line-height: 1.15; font-weight: 700;">Anchored in Grace: Walking in Unshakable Faith</h1>
+<!-- Short Extract Paragraph -->
+<p class="text-gray-200 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl font-light" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif; line-height: 1.6;">No matter the trials or uncertainties of today, God's grace remains steadfast and sufficient. Learn how stepping out in trust and prayer anchors your soul with unshakeable peace and renewal.</p>
+<!-- Call to Action Button -->
+<a class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-[#7b16ff] hover:bg-[#680cdc] text-white font-medium text-sm transition-all duration-200 shadow-lg shadow-purple-950/40" href="#quotes-section" style="border-radius: 8px; background-color: rgb(131, 17, 210);">
+<span class="">Read Today's Devotion</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- END: HeroBannerContent -->
+</section>
+<!-- END: HeroAndHeaderSection -->
+<!-- BEGIN: MidSectionSplit -->
+<section class="w-full bg-[#f4f3f8] py-0" data-purpose="quotes-and-archive" id="quotes-section">
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[480px] mx-auto" style="max-width: 1280px; width: 100%;">
+<!-- Left Column: Active Daily Quote Card -->
+<div class="lg:col-span-7 px-6 sm:px-12 lg:px-16 py-12 flex flex-col items-center justify-center">
+<!-- Date / Badge Pill -->
+<div class="mb-6 inline-flex items-center px-4 py-1.5 rounded-full bg-purple-100/80 border border-purple-200/80 text-xs font-semibold text-purple-900 tracking-wide shadow-sm" id="today-date-badge">
+<span id="today-badge-label" class="">Today's Quote - 25th March, 2026</span>
+</div>
+<!-- White Quote Display Card -->
+<div class="w-full max-w-xl bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 quote-card-shadow text-center relative flex flex-col items-center transition-all duration-300">
+<!-- Large Decorative Quote Icon -->
+<div class="self-start text-purple-200 mb-2">
+<svg class="w-10 h-10 text-purple-300/70 fill-current" viewBox="0 0 24 24">
+<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+</svg>
+</div>
+<!-- Quote Body -->
+<blockquote class="text-base sm:text-lg font-medium text-gray-800 leading-snug px-4 mb-6 min-h-[64px] flex items-center justify-center" id="today-quote-text" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif; line-height: 1.5;">"Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC"</blockquote>
+<!-- Author Divider & Tag -->
+<div class="w-12 h-1 bg-purple-600 rounded-full mb-3"></div>
+<p class="text-xs font-bold text-gray-900 tracking-wider uppercase" id="today-quote-author">ANONYMOUS</p><div class="mt-3 pt-3 border-t border-purple-100/80 w-full flex items-center justify-center"><a href="https://www.successlife.app/" target="_blank" class="text-[11px] font-medium tracking-wide text-purple-900/40 hover:text-purple-700 transition-colors flex items-center gap-1 font-mono">https://www.successlife.app/</a></div>
+</div>
+<!-- Action Buttons (Download & Share) -->
+<div class="flex items-center gap-4 mt-6">
+<button class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#7b16ff] hover:bg-[#680cdc] text-white text-xs font-semibold shadow-sm transition-all transform active:scale-95" onclick="handleDownloadQuote()" style="border-radius: 8px; background-color: rgb(131, 17, 210);">
+<span class="">Download</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-white border border-purple-400 text-purple-700 hover:bg-purple-50 text-xs font-semibold shadow-sm transition-all transform active:scale-95" onclick="handleShareQuote()" style="border-radius: 8px;">
+<span class="">Share</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Right Column: Interactive Quote Archive (Deep Purple Panel) -->
+<div class="lg:col-span-5 bg-[#3c0071] text-white px-8 sm:px-12 py-12 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-medium text-purple-300 tracking-wider">Previous Quotes</span>
+<!-- Simulate Rollover Action -->
+<button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple-900/90 hover:bg-purple-800 text-[11px] text-purple-200 border border-purple-700/60 transition-colors cursor-pointer" onclick="simulateDayRollover()" title="Simulate passing to next day and archiving current quote">
+<svg class="w-3 h-3 text-purple-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Simulate Day Rollover</span>
+</button>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-6" style="font-family: Montserrat, sans-serif; font-size: 35px; line-height: 1.25; font-weight: 700;">Quote Archive</h2>
+<!-- Dynamic Archive List Container -->
+<div class="space-y-3.5" id="archive-quote-list"><div class="flex items-center gap-3.5 group cursor-pointer p-1.5 -mx-1.5 rounded-xl hover:bg-purple-800/40 transition-all duration-150" title="Click to preview this quote in detail">
+        <button type="button" aria-label="Open quote for 28 MON" class="w-12 h-12 rounded-xl bg-purple-900/90 border border-purple-700/60 hover:border-purple-400 group-hover:scale-105 flex flex-col items-center justify-center text-center flex-shrink-0 transition-transform shadow-inner">
+          <span class="text-sm font-bold leading-none text-white">28</span>
+          <span class="text-[9px] uppercase tracking-wider text-purple-300 mt-0.5 font-semibold">MON</span>
+        </button>
+        <div class="truncate flex-1">
+          <p class="text-xs sm:text-sm font-normal italic text-purple-100 truncate group-hover:text-white transition-colors">"Take God's Word with you wherever you go. His grace will never lead where His hand cannot keep you."</p>
+          <p class="text-[11px] text-purple-300 font-medium mt-0.5">Martin Luther</p>
+        </div>
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity pr-1 text-purple-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+      </div><div class="flex items-center gap-3.5 group cursor-pointer p-1.5 -mx-1.5 rounded-xl hover:bg-purple-800/40 transition-all duration-150" title="Click to preview this quote in detail">
+        <button type="button" aria-label="Open quote for 29 TUE" class="w-12 h-12 rounded-xl bg-purple-900/90 border border-purple-700/60 hover:border-purple-400 group-hover:scale-105 flex flex-col items-center justify-center text-center flex-shrink-0 transition-transform shadow-inner">
+          <span class="text-sm font-bold leading-none text-white">29</span>
+          <span class="text-[9px] uppercase tracking-wider text-purple-300 mt-0.5 font-semibold">TUE</span>
+        </button>
+        <div class="truncate flex-1">
+          <p class="text-xs sm:text-sm font-normal italic text-purple-100 truncate group-hover:text-white transition-colors">"The good news of the gospel is not that God turns away His gaze, but that He turns toward us in mercy."</p>
+          <p class="text-[11px] text-purple-300 font-medium mt-0.5">Kojo Asante</p>
+        </div>
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity pr-1 text-purple-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+      </div><div class="flex items-center gap-3.5 group cursor-pointer p-1.5 -mx-1.5 rounded-xl hover:bg-purple-800/40 transition-all duration-150" title="Click to preview this quote in detail">
+        <button type="button" aria-label="Open quote for 30 WED" class="w-12 h-12 rounded-xl bg-purple-900/90 border border-purple-700/60 hover:border-purple-400 group-hover:scale-105 flex flex-col items-center justify-center text-center flex-shrink-0 transition-transform shadow-inner">
+          <span class="text-sm font-bold leading-none text-white">30</span>
+          <span class="text-[9px] uppercase tracking-wider text-purple-300 mt-0.5 font-semibold">WED</span>
+        </button>
+        <div class="truncate flex-1">
+          <p class="text-xs sm:text-sm font-normal italic text-purple-100 truncate group-hover:text-white transition-colors">"The will of God will never take you where the grace of God cannot protect you and sustain you."</p>
+          <p class="text-[11px] text-purple-300 font-medium mt-0.5">SMI International</p>
+        </div>
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity pr-1 text-purple-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+      </div><div class="flex items-center gap-3.5 group cursor-pointer p-1.5 -mx-1.5 rounded-xl hover:bg-purple-800/40 transition-all duration-150" title="Click to preview this quote in detail">
+        <button type="button" aria-label="Open quote for 31 THU" class="w-12 h-12 rounded-xl bg-purple-900/90 border border-purple-700/60 hover:border-purple-400 group-hover:scale-105 flex flex-col items-center justify-center text-center flex-shrink-0 transition-transform shadow-inner">
+          <span class="text-sm font-bold leading-none text-white">31</span>
+          <span class="text-[9px] uppercase tracking-wider text-purple-300 mt-0.5 font-semibold">THU</span>
+        </button>
+        <div class="truncate flex-1">
+          <p class="text-xs sm:text-sm font-normal italic text-purple-100 truncate group-hover:text-white transition-colors">"God is most glorified in us when we are most satisfied and anchored in His constant presence."</p>
+          <p class="text-[11px] text-purple-300 font-medium mt-0.5">Franklin Akwaa</p>
+        </div>
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity pr-1 text-purple-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+      </div><div class="flex items-center gap-3.5 group cursor-pointer p-1.5 -mx-1.5 rounded-xl hover:bg-purple-800/40 transition-all duration-150" title="Click to preview this quote in detail">
+        <button type="button" aria-label="Open quote for 24 SUN" class="w-12 h-12 rounded-xl bg-purple-900/90 border border-purple-700/60 hover:border-purple-400 group-hover:scale-105 flex flex-col items-center justify-center text-center flex-shrink-0 transition-transform shadow-inner">
+          <span class="text-sm font-bold leading-none text-white">24</span>
+          <span class="text-[9px] uppercase tracking-wider text-purple-300 mt-0.5 font-semibold">SUN</span>
+        </button>
+        <div class="truncate flex-1">
+          <p class="text-xs sm:text-sm font-normal italic text-purple-100 truncate group-hover:text-white transition-colors">"Faith does not eliminate questions; but faith knows where to take them with a peaceful heart."</p>
+          <p class="text-[11px] text-purple-300 font-medium mt-0.5">Elisabeth Elliot</p>
+        </div>
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity pr-1 text-purple-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+      </div></div>
+</div>
+<!-- Archive Footer Link -->
+<div class="mt-8 pt-4 border-t border-purple-800/60 flex items-center justify-between">
+<a class="text-xs sm:text-sm italic text-purple-200 hover:text-white transition-colors inline-flex items-center gap-1 font-medium group" href="#quotes-section" onclick="openArchiveModal(archiveQuotes[0])">
+<span class="">Browse Previous Devotions...</span>
+<svg class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<span class="text-[10px] text-purple-400 font-mono">Rolling 4-Day Sync</span>
+</div>
+</div>
+</div>
+</section><!-- BEGIN: PodcastSection -->
+
+<!-- END: PodcastSection -->
+<!-- END: MidSectionSplit -->
+<!-- BEGIN: Quote Modal Popup -->
+<div aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-200 opacity-0 hidden" id="quote-modal" role="dialog">
+<div class="relative w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-2xl text-center flex flex-col items-center transform transition-all duration-200 scale-95" id="quote-modal-content">
+<!-- Close Button -->
+<button aria-label="Close modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 p-1.5 rounded-full hover:bg-gray-100 transition-colors" onclick="closeQuoteModal()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Date / Badge Pill -->
+<div class="mb-5 inline-flex items-center px-4 py-1.5 rounded-full bg-purple-100/80 border border-purple-200/80 text-xs font-semibold text-purple-900 tracking-wide" id="modal-date-badge">Quote Archive - 29th March, 2026</div>
+<!-- Decorative Quotation Mark -->
+<div class="self-start text-purple-200 mb-2">
+<svg class="w-10 h-10 text-purple-300/70 fill-current" viewBox="0 0 24 24">
+<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+</svg>
+</div>
+<!-- Quote Body -->
+<blockquote class="text-base sm:text-lg font-medium text-gray-800 leading-snug px-3 mb-6" id="modal-quote-text">"The good news of the gospel is not that God turns away His gaze, but that He turns toward us in mercy."</blockquote>
+<!-- Author Divider & Tag -->
+<div class="w-12 h-1 bg-purple-600 rounded-full mb-3"></div>
+<p class="text-xs font-bold text-gray-900 tracking-wider uppercase mb-6" id="modal-quote-author">KOJO ASANTE</p><div class="-mt-3 mb-6 pt-3 border-t border-purple-100/80 w-full flex items-center justify-center"><a href="https://www.successlife.app/" target="_blank" class="text-[11px] font-medium tracking-wide text-purple-900/40 hover:text-purple-700 transition-colors flex items-center gap-1 font-mono">https://www.successlife.app/</a></div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-[#7b16ff] hover:bg-[#680cdc] text-white text-xs font-semibold shadow-sm transition-colors" onclick="handleModalDownload()" style="border-radius: 8px; background-color: rgb(131, 17, 210);">
+<span class="">Download</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-white border border-purple-400 text-purple-700 hover:bg-purple-50 text-xs font-semibold shadow-sm transition-colors" onclick="handleModalShare()" style="border-radius: 8px;">
+<span class="">Share</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<!-- END: Quote Modal Popup -->
+<!-- BEGIN: AppDownloadSection -->
+<section class="py-20 px-6 sm:px-10 max-w-7xl mx-auto bg-white" data-purpose="app-showcase-download" style="max-width: 1280px;">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Mockup Showcase (Three angled phones layout) -->
+<div class="lg:col-span-6 flex justify-center items-center">
+<div class="relative w-full max-w-md h-[460px] flex items-center justify-center" data-purpose="phone-mockups">
+<!-- Left Phone Mockup -->
+<div class="w-48 sm:w-56 h-[390px] rounded-[36px] bg-gray-900 p-2.5 shadow-2xl border-[3px] border-gray-700/50 transform -translate-x-14 translate-y-3 z-10 flex flex-col overflow-hidden">
+<div class="w-20 h-4 bg-gray-900 rounded-b-lg mx-auto mb-1 flex items-center justify-center"></div>
+<div class="flex-1 bg-white rounded-[26px] p-3 text-center flex flex-col justify-start">
+<div class="w-6 h-6 bg-black mx-auto mb-2 flex items-center justify-center text-white text-[9px] font-bold">U</div>
+<span class="text-[10px] font-bold text-gray-800 leading-tight">Unsplash</span>
+<span class="text-[7px] text-gray-400 mt-1">The internet's source of freely-usable images.</span>
+<div class="mt-4 bg-gray-100 rounded-md py-1.5 px-2 text-[8px] text-gray-400 text-left">Search high resolution...</div>
+<div class="mt-auto mb-4">
+<div class="w-full py-1.5 bg-gray-200 rounded text-[9px] font-semibold text-gray-700">Login / Sign Up</div>
+</div>
+</div>
+</div>
+<!-- Middle Phone Mockup (Front Facing / Featured) -->
+<div class="w-48 sm:w-56 h-[410px] rounded-[36px] bg-gray-900 p-2.5 shadow-2xl border-[3px] border-gray-600 transform z-20 flex flex-col overflow-hidden -ml-8">
+<div class="w-20 h-4 bg-gray-900 rounded-b-lg mx-auto mb-1"></div>
+<div class="flex-1 bg-[#1e293b] rounded-[26px] p-3 flex flex-col text-white">
+<div class="text-[10px] font-semibold text-center mt-1">Join Unsplash</div>
+<div class="text-[7px] text-gray-400 text-center mb-3">Already have an account? Login</div>
+<div class="bg-blue-600 text-white rounded text-[8px] py-1 text-center font-medium mb-3">Login using Facebook</div>
+<div class="space-y-1.5 text-[7px]">
+<input class="w-full bg-slate-800 border-0 rounded px-1.5 py-1 text-gray-300 text-[8px]" disabled="" placeholder="First Name">
+<input class="w-full bg-slate-800 border-0 rounded px-1.5 py-1 text-gray-300 text-[8px]" disabled="" placeholder="Email">
+<input class="w-full bg-slate-800 border-0 rounded px-1.5 py-1 text-gray-300 text-[8px]" disabled="" placeholder="Password">
+</div>
+<button class="mt-auto mb-2 bg-white text-gray-900 font-bold text-[8px] py-1.5 rounded" disabled="">Join Now</button>
+</div>
+</div>
+<!-- Right Phone Mockup -->
+<div class="w-44 sm:w-52 h-[370px] rounded-[32px] bg-gray-900 p-2 shadow-xl border-[2px] border-gray-700 transform translate-x-12 -translate-y-2 z-0 flex flex-col overflow-hidden">
+<div class="flex-1 bg-amber-50 rounded-[22px] p-2 flex flex-col">
+<div class="grid grid-cols-2 gap-1.5 mt-2">
+<div class="h-16 bg-orange-200 rounded-md"></div>
+<div class="h-16 bg-purple-300 rounded-md"></div>
+<div class="h-16 bg-amber-100 rounded-md"></div>
+<div class="h-16 bg-sky-200 rounded-md"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: App Description, QR Code, and Badges -->
+<div class="lg:col-span-6 flex flex-col justify-center"><h2 class="text-3xl md:text-4xl font-bold font-sans text-gray-900 tracking-tight leading-tight mb-4" style="font-family: Montserrat, sans-serif; font-size: 35px; line-height: 1.25; font-weight: 700;">
+          Read God's Word and Stay Inspired with The Success Life App
+        </h2>
+<p class="text-gray-600 text-sm leading-relaxed mb-8 max-w-lg font-light" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif; line-height: 1.6;">
+          Take God's Word with you wherever you go by downloading the free Bible App. Listen to audio Bibles, create Prayers, study with Friends, and much more—all for free.
+        </p>
+<h3 class="text-lg font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">
+          Download Success Life App Now
+        </h3>
+<div class="flex items-center gap-6 md:gap-8 flex-wrap lg:flex-nowrap">
+  <div class="p-2.5 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center gap-4 flex-shrink-0">
+    <svg class="w-28 h-28 flex-shrink-0" fill="currentColor" viewBox="0 0 100 100">
+      <rect fill="#000" height="30" rx="4" width="30" x="0" y="0"></rect>
+      <rect fill="#fff" height="20" rx="2" width="20" x="5" y="5"></rect>
+      <rect fill="#000" height="10" rx="1" width="10" x="10" y="10"></rect>
+      <rect fill="#000" height="30" rx="4" width="30" x="70" y="0"></rect>
+      <rect fill="#fff" height="20" rx="2" width="20" x="75" y="5"></rect>
+      <rect fill="#000" height="10" rx="1" width="10" x="80" y="10"></rect>
+      <rect fill="#000" height="30" rx="4" width="30" x="0" y="70"></rect>
+      <rect fill="#fff" height="20" rx="2" width="20" x="5" y="75"></rect>
+      <rect fill="#000" height="10" rx="1" width="10" x="10" y="80"></rect>
+      <rect fill="#000" height="6" width="6" x="36" y="8"></rect>
+      <rect fill="#000" height="10" width="6" x="48" y="8"></rect>
+      <rect fill="#000" height="6" width="8" x="58" y="12"></rect>
+      <rect fill="#000" height="6" width="14" x="36" y="20"></rect>
+      <rect fill="#000" height="6" width="6" x="56" y="22"></rect>
+      <rect fill="#000" height="8" width="16" x="8" y="38"></rect>
+      <rect fill="#000" height="10" width="10" x="34" y="36"></rect>
+      <rect fill="#000" height="6" width="14" x="50" y="34"></rect>
+      <rect fill="#000" height="8" width="16" x="76" y="38"></rect>
+      <rect fill="#000" height="14" width="8" x="36" y="52"></rect>
+      <rect fill="#000" height="10" width="12" x="48" y="46"></rect>
+      <rect fill="#000" height="8" width="18" x="68" y="52"></rect>
+      <rect fill="#000" height="8" width="16" x="38" y="72"></rect>
+      <rect fill="#000" height="18" width="8" x="60" y="68"></rect>
+      <rect fill="#000" height="10" width="10" x="76" y="76"></rect>
+    </svg>
+    <div class="text-xs text-gray-500 font-medium leading-relaxed max-w-xs">
+      <div class="">Scan the QR Code with your mobile device</div>
+      <div class="">to download Bible App.</div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-3 flex-shrink-0">
+    <a class="bg-black hover:bg-neutral-900 text-white px-4 py-2.5 inline-flex items-center gap-3 rounded-xl transition-colors shadow-sm w-48" href="#" style="border-radius: 8px;">
+      <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24">
+        <path d="M3.609 1.814L13.792 12 3.61 22.186c-.328-.358-.528-.857-.528-1.42V3.234c0-.563.2-.87.527-1.42z" fill="#2196F3"></path>
+        <path d="M17.156 8.636l-3.364 3.364 3.364 3.364 3.797-2.19c.642-.37.642-1.968 0-2.338l-3.797-2.2z" fill="#FFC107"></path>
+        <path d="M3.609 1.814l10.183 10.186 3.364-3.364L4.856.74c-.463-.267-.985-.126-1.247.368v.706z" fill="#4CAF50"></path>
+        <path d="M13.792 12L3.609 22.186c.262.494.784.635 1.247.368l12.3-7.106-3.364-3.364-.001-.084z" fill="#F44336"></path>
+      </svg>
+      <div class="flex flex-col text-left leading-tight">
+        <span class="text-[10px] uppercase tracking-wider text-neutral-300 font-medium leading-none">GET IT ON</span>
+        <span class="text-sm font-semibold text-white leading-tight mt-0.5">Google Play</span>
+      </div>
+    </a>
+    <a class="bg-black hover:bg-neutral-900 text-white px-4 py-2.5 inline-flex items-center gap-3 rounded-xl transition-colors shadow-sm w-48" href="#" style="border-radius: 8px;">
+      <svg class="w-6 h-6 flex-shrink-0 fill-current text-white" viewBox="0 0 24 24">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.66-.82 1.11-1.96.99-3.1-.96.04-2.12.64-2.81 1.45-.6.71-1.13 1.87-.99 2.99 1.07.08 2.16-.54 2.81-1.34z"></path>
+      </svg>
+      <div class="flex flex-col text-left leading-tight">
+        <span class="text-[10px] text-neutral-300 font-normal leading-none">Download on the</span>
+        <span class="text-sm font-semibold text-white leading-tight mt-0.5">App Store</span>
+      </div>
+    </a>
+  </div>
+</div></div>
+</div>
+</section>
+<!-- END: AppDownloadSection -->
+<!-- BEGIN: FooterNewsletterArea -->
+<section id="podcasts-section" class="py-16 border-t border-gray-200" style="background-color: rgb(243, 238, 246); border-bottom: 1px solid rgba(123, 22, 255, 0.1);" data-purpose="podcast-episodes">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-8" style="max-width: 1280px;">
+    <!-- Section Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-3xl font-bold font-sans text-gray-900 tracking-tight" style="font-family: Montserrat, sans-serif; font-size: 35px; line-height: 1.25; font-weight: 700;">Podcast</h2>
+        <p class="text-gray-500 text-sm mt-1" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif;">Biblical wisdom, honest conversations, and spiritual guidance for everyday life.</p>
+      </div>
+      <a href="#podcast-main" onclick="event.preventDefault(); showPodcastAlert('Navigating to full Podcast library...');" class="inline-flex items-center gap-1 text-sm font-semibold text-[#7b16ff] hover:text-[#680cdc] hover:underline transition-colors group">
+        <span class="">See All</span>
+        <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Main 3-Column Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+      <!-- Column 1: Featured Podcast Episode 1 (Warm Podcast Studio photo) -->
+      <div onclick="playPodcastEpisode('Walking in Purpose: Navigating Seasons of Transition', 'With Pastor Sarah Jenkins &amp; Michael Cole • Ep. 42')" class="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col justify-between min-h-[420px] p-6 cursor-pointer"><img src="podcast-studio-course3.jpg" alt="Podcast Studio with vintage microphone" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20"></div>
+
+        <!-- Top Tag & Duration Pill -->
+        <div class="relative z-10 flex items-center justify-between w-full">
+          <span class="uppercase tracking-wider text-[11px] font-bold bg-[#7b16ff] text-white px-3 py-1 rounded-full shadow-sm">Episode 42</span>
+          <span class="bg-white/20 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium">38 min</span>
+        </div>
+
+        <!-- Bottom Content Group with Play Button, Title, and Subtitle -->
+        <div class="relative z-10 mt-auto flex flex-col items-start">
+          <button type="button" aria-label="Play Walking in Purpose" class="w-14 h-14 rounded-full bg-white/90 text-[#7b16ff] flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white transition-all cursor-pointer mb-4">
+            <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+          <h3 class="text-xl font-bold text-white mb-2 leading-snug group-hover:text-purple-200 transition-colors text-left" style="font-family: Montserrat, sans-serif;">Walking in Purpose: Navigating Seasons of Transition</h3>
+          <p class="text-sm text-gray-300 font-light text-left">With Pastor Sarah Jenkins &amp; Michael Cole • Ep. 42</p>
+        </div></div>
+
+      <!-- Column 2: Featured Podcast Episode 2 (Warm Open Bible and Headphones photo) -->
+      <div onclick="playPodcastEpisode('Silence in the Noise: The Lost Art of Contemplative Prayer', 'With SMI Leadership Team • Ep. 41')" class="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col justify-between min-h-[420px] p-6 cursor-pointer"><img src="bible-headphones-course2.jpg" alt="Open Bible with headphones and coffee" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20"></div>
+
+        <!-- Top Tag & Duration Pill -->
+        <div class="relative z-10 flex items-center justify-between w-full">
+          <span class="uppercase tracking-wider text-[11px] font-bold bg-[#7b16ff] text-white px-3 py-1 rounded-full shadow-sm">Episode 41</span>
+          <span class="bg-white/20 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium">45 min</span>
+        </div>
+
+        <!-- Bottom Content Group with Play Button, Title, and Subtitle -->
+        <div class="relative z-10 mt-auto flex flex-col items-start">
+          <button type="button" aria-label="Play Silence in the Noise" class="w-14 h-14 rounded-full bg-white/90 text-[#7b16ff] flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white transition-all cursor-pointer mb-4">
+            <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+          <h3 class="text-xl font-bold text-white mb-2 leading-snug group-hover:text-purple-200 transition-colors text-left" style="font-family: Montserrat, sans-serif;">Silence in the Noise: The Lost Art of Contemplative Prayer</h3>
+          <p class="text-sm text-gray-300 font-light text-left">With SMI Leadership Team • Ep. 41</p>
+        </div></div>
+
+      <!-- Column 3: Episode List / Queue -->
+      <div class="rounded-2xl bg-white/90 backdrop-blur-sm border border-purple-100 p-6 shadow-sm flex flex-col justify-between h-full">
+        <div>
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-gray-900 text-base">Episode Queue</span>
+              <span class="px-2 py-0.5 rounded-full bg-purple-100 text-[#7b16ff] text-[10px] font-bold">3 Recent</span>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-[#7b16ff]">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M12 1a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V6a5 5 0 0 0-5-5zm7 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V21H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 12z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Episodes List -->
+          <div class="space-y-3"><div onclick="playPodcastEpisode('Finding Peace When Anxiety Strikes', 'Dr. Grace Mwangi • 28 min')" class="flex items-center gap-3.5 p-3 rounded-xl bg-white hover:bg-purple-50 transition-all cursor-pointer group border-2 border-dashed border-purple-300 shadow-sm">
+  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Dr. Grace Mwangi" class="w-11 h-11 rounded-full object-cover ring-2 ring-purple-500/20 flex-shrink-0">
+  <div class="truncate flex-1 min-w-0">
+    <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#7b16ff] transition-colors truncate">Finding Peace When Anxiety Strikes</h4>
+    <p class="text-xs text-gray-500 truncate mt-0.5 font-medium">Dr. Grace Mwangi • 28 min</p>
+  </div>
+  <div class="text-purple-400 group-hover:text-[#7b16ff] transition-colors flex-shrink-0">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path>
+    </svg>
+  </div>
+</div>
+
+<div onclick="playPodcastEpisode('The Courage to Forgive the Unforgivable', 'Pastor David Vance • 34 min')" class="flex items-center gap-3.5 p-3 rounded-xl bg-white hover:bg-purple-50 transition-all cursor-pointer group border-2 border-dashed border-purple-300 shadow-sm">
+  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Pastor David Vance" class="w-11 h-11 rounded-full object-cover ring-2 ring-purple-500/20 flex-shrink-0">
+  <div class="truncate flex-1 min-w-0">
+    <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#7b16ff] transition-colors truncate">The Courage to Forgive the Unforgivable</h4>
+    <p class="text-xs text-gray-500 truncate mt-0.5 font-medium">Pastor David Vance • 34 min</p>
+  </div>
+  <div class="text-purple-400 group-hover:text-[#7b16ff] transition-colors flex-shrink-0">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path>
+    </svg>
+  </div>
+</div>
+
+<div onclick="playPodcastEpisode('Guarding Your Heart in Digital Times', 'Hannah &amp; Liam Scott • 42 min')" class="flex items-center gap-3.5 p-3 rounded-xl bg-white hover:bg-purple-50 transition-all cursor-pointer group border-2 border-dashed border-purple-300 shadow-sm">
+  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Hannah &amp; Liam Scott" class="w-11 h-11 rounded-full object-cover ring-2 ring-purple-500/20 flex-shrink-0">
+  <div class="truncate flex-1 min-w-0">
+    <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#7b16ff] transition-colors truncate">Guarding Your Heart in Digital Times</h4>
+    <p class="text-xs text-gray-500 truncate mt-0.5 font-medium">Hannah &amp; Liam Scott • 42 min</p>
+  </div>
+  <div class="text-purple-400 group-hover:text-[#7b16ff] transition-colors flex-shrink-0">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path>
+    </svg>
+  </div>
+</div>
+
+</div>
+        </div>
+
+        <!-- Bottom Callout Link -->
+        <a href="#podcast-main" onclick="event.preventDefault(); showPodcastAlert('Navigating to full Podcast library...');" class="mt-5 pt-3 border-t border-purple-100 text-xs font-semibold text-[#7b16ff] hover:text-[#680cdc] hover:underline block text-center transition-colors">
+          Browse All Episodes →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Sticky/Floating Audio Playback Player (Interactive Component) -->
+  <div id="podcast-audio-player" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 w-[92%] max-w-2xl bg-gray-900/95 backdrop-blur-md text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-purple-500/30 flex items-center justify-between gap-4 transition-all duration-300 translate-y-28 opacity-0 pointer-events-none">
+    <div class="flex items-center gap-3 min-w-0 flex-1">
+      <div class="w-10 h-10 rounded-lg bg-[#7b16ff] flex items-center justify-center text-white flex-shrink-0">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"></path>
+        </svg>
+      </div>
+      <div class="truncate flex-1">
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-purple-300">Now Playing</span>
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        </div>
+        <p id="player-episode-title" class="text-xs sm:text-sm font-semibold truncate text-white" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif;">Walking in Purpose: Navigating Seasons of Transition</p>
+        <p id="player-episode-subtitle" class="text-[10px] text-gray-400 truncate" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif;">Pastor Sarah Jenkins &amp; Michael Cole</p>
+      </div>
+    </div>
+    <!-- Controls and Scrubber Simulation -->
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <div class="hidden sm:flex items-center gap-2 w-32">
+        <div class="h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+          <div class="h-full bg-[#7b16ff] rounded-full w-2/5"></div>
+        </div>
+        <span class="text-[10px] text-gray-400 font-mono">14:20</span>
+      </div>
+      <button type="button" onclick="closeAudioPlayer()" class="p-1.5 text-gray-400 hover:text-white rounded-full hover:bg-gray-800 transition-colors" aria-label="Close player">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section><section id="courses-section" class="py-20 px-6 lg:px-12 text-white" style="background-color: rgb(47, 20, 63);" data-purpose="course-showcase"><div class="max-w-7xl mx-auto" style="max-width: 1280px;"><div class="text-left mb-6"><h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight text-left" style="font-family: Montserrat, sans-serif; font-size: 35px; line-height: 1.25; font-weight: 700;">Take A Course</h2></div><div class="relative w-full mb-12"><div id="course-category-carousel" class="flex items-center justify-start gap-3 overflow-x-auto pb-2 scroll-smooth" style="scrollbar-width: none; font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif;"><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border" style="font-family: 'Space Grotesk', sans-serif; background-color: #8311d2; border-color: #8311d2; color: #fff;">Mathematics</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Biblical Leadership</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Spiritual Growth</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Faith &amp; Family</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">World Missions</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Theology &amp; Doctrine</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Pastoral Ministry</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Youth &amp; Children</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Christian Counseling</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Worship &amp; Arts</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Discipleship</button><button type="button" onclick="selectCourseCategory(this)" class="course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10" style="font-family: 'Space Grotesk', sans-serif;">Prayer &amp; Intercession</button></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-12"><div class="bg-white overflow-hidden shadow-lg flex flex-col text-gray-800 transition-all hover:shadow-xl group" style="border-radius: 5px 5px 20px;"><div class="relative h-48 w-full overflow-hidden"><img src="course1-mathematics.jpg" alt="Course 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute top-3 left-3 bg-purple-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">Foundations</div></div><div class="p-6 flex-1 flex flex-col justify-between"><div class="mb-4"><div class="flex items-center justify-between text-xs text-gray-500 mb-2"><div class="flex items-center gap-1 text-amber-500 font-semibold"><svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><span class="">4.8 (120)</span></div><div class="flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><span class="">Time: 4h 30m</span></div></div><h3 class="text-lg font-bold text-gray-900 leading-snug hover:text-purple-700 transition-colors mb-2">Course 1 Title Here &amp; More Allowed</h3><p class="text-xs text-gray-600 font-light leading-relaxed line-clamp-2">A systematic journey through foundational principles applied to modern reasoning, study skills, and critical insight.</p></div><div class="pt-4 border-t border-gray-100 flex items-center justify-between"><span class="text-sm font-bold text-purple-700">Free Enrollment</span><a href="#" class="bg-[#7c1dc6] hover:bg-[#6814a8] text-white font-medium px-5 py-2.5 text-sm transition-colors shadow-sm inline-flex items-center gap-1.5" style="border-radius: 8px; background-color: rgb(131, 17, 210);"><span class="">Read more</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div></div><div class="bg-white overflow-hidden shadow-lg flex flex-col text-gray-800 transition-all hover:shadow-xl group" style="border-radius: 5px 5px 20px;"><div class="relative h-48 w-full overflow-hidden"><img src="bible-headphones-course2.jpg" alt="Course 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute top-3 left-3 bg-purple-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">Leadership</div></div><div class="p-6 flex-1 flex flex-col justify-between"><div class="mb-4"><div class="flex items-center justify-between text-xs text-gray-500 mb-2"><div class="flex items-center gap-1 text-amber-500 font-semibold"><svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><span class="">4.9 (185)</span></div><div class="flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><span class="">Time: 6h 15m</span></div></div><h3 class="text-lg font-bold text-gray-900 leading-snug hover:text-purple-700 transition-colors mb-2">Course 2 Title Here &amp; More Allowed</h3><p class="text-xs text-gray-600 font-light leading-relaxed line-clamp-2">Equipping professionals and community leaders with servant-hearted, ethically grounded principles that inspire positive change.</p></div><div class="pt-4 border-t border-gray-100 flex items-center justify-between"><span class="text-sm font-bold text-purple-700">Certified</span><a href="#" class="bg-[#7c1dc6] hover:bg-[#6814a8] text-white font-medium px-5 py-2.5 text-sm transition-colors shadow-sm inline-flex items-center gap-1.5" style="border-radius: 8px; background-color: rgb(131, 17, 210);"><span class="">Read more</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div></div><div class="bg-white overflow-hidden shadow-lg flex flex-col text-gray-800 transition-all hover:shadow-xl group" style="border-radius: 5px 5px 20px;"><div class="relative h-48 w-full overflow-hidden"><img src="podcast-studio-course3.jpg" alt="Course 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"><div class="absolute top-3 left-3 bg-purple-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider">Counseling</div></div><div class="p-6 flex-1 flex flex-col justify-between"><div class="mb-4"><div class="flex items-center justify-between text-xs text-gray-500 mb-2"><div class="flex items-center gap-1 text-amber-500 font-semibold"><svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><span class="">4.7 (98)</span></div><div class="flex items-center gap-1 text-gray-500"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><span class="">Time: 3h 45m</span></div></div><h3 class="text-lg font-bold text-gray-900 leading-snug hover:text-purple-700 transition-colors mb-2">Course 3 Title Here &amp; More Allowed</h3><p class="text-xs text-gray-600 font-light leading-relaxed line-clamp-2">Master thoughtful communication, healthy active listening, and conflict resolution rooted in biblical empathy and grace.</p></div><div class="pt-4 border-t border-gray-100 flex items-center justify-between"><span class="text-sm font-bold text-purple-700">Certificate</span><a href="#" class="bg-[#7c1dc6] hover:bg-[#6814a8] text-white font-medium px-5 py-2.5 text-sm transition-colors shadow-sm inline-flex items-center gap-1.5" style="border-radius: 8px; background-color: rgb(131, 17, 210);"><span class="">Read more</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div></div></div><div class="flex justify-start"><a href="#courses" class="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#2F143F] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 cursor-pointer text-base shadow-md" style="border-radius: 8px;"><span class="">View all courses</span><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div></div></section><script id="course-category-script" class="">function selectCourseCategory(btn){var pills=document.querySelectorAll('.course-cat-pill');pills.forEach(function(p){p.style.backgroundColor='';p.style.borderColor='';p.style.color='';p.className='course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border border-white/40 text-white/90 hover:border-white hover:bg-white/10';});btn.className='course-cat-pill flex-shrink-0 font-medium rounded-full px-5 py-2 text-sm transition-all cursor-pointer border';btn.style.backgroundColor='#8311d2';btn.style.borderColor='#8311d2';btn.style.color='#fff';btn.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}(function initCategoryAutoScroll(){var carousel=document.getElementById('course-category-carousel');if(!carousel)return;var scrollDirection=1;var isHovered=false;carousel.addEventListener('mouseenter',function(){isHovered=true;});carousel.addEventListener('mouseleave',function(){isHovered=false;});carousel.addEventListener('touchstart',function(){isHovered=true;},{passive:true});carousel.addEventListener('touchend',function(){isHovered=false;});setInterval(function(){if(isHovered)return;if(carousel.scrollLeft+carousel.clientWidth>=carousel.scrollWidth-5){scrollDirection=-1;}else if(carousel.scrollLeft<=5){scrollDirection=1;}carousel.scrollLeft+=scrollDirection*0.8;},35);})();</script><script class="">
+  function playPodcastEpisode(title, subtitle) {
+    var player = document.getElementById('podcast-audio-player');
+    var titleEl = document.getElementById('player-episode-title');
+    var subtitleEl = document.getElementById('player-episode-subtitle');
+    if (titleEl) titleEl.innerText = title;
+    if (subtitleEl) subtitleEl.innerText = subtitle;
+    if (player) {
+      player.classList.remove('translate-y-28', 'opacity-0', 'pointer-events-none');
+      player.classList.add('translate-y-0', 'opacity-100');
+    }
+  }
+  function closeAudioPlayer() {
+    var player = document.getElementById('podcast-audio-player');
+    if (player) {
+      player.classList.add('translate-y-28', 'opacity-0', 'pointer-events-none');
+      player.classList.remove('translate-y-0', 'opacity-100');
+    }
+  }
+  function showPodcastAlert(msg) {
+    alert(msg);
+  }
+</script><!-- BEGIN: BlogAndArticlesSection -->
+<section id="articles-section" class="bg-white py-16 px-6 lg:px-12 border-t border-gray-100" data-purpose="articles-showcase">
+  <div class="max-w-7xl mx-auto" style="max-width: 1280px;">
+    <!-- Section Title & Intro -->
+    <div class="flex items-center justify-between mb-10 pb-4 border-b border-gray-100"><div>
+        <div class="flex items-center gap-2 mb-1">
+          <h2 class="text-3xl font-bold font-sans text-gray-900 tracking-tight" style="font-family: Montserrat, sans-serif; font-size: 35px; line-height: 1.25; font-weight: 700;">Latest Articles &amp; Insights</h2>
+          
+        </div>
+        <p class="text-gray-500 text-sm" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif;">Displaying articles in chronological order (Latest to Oldest) • Updated Daily</p>
+      </div>
+      <a href="#" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-[#7b16ff] hover:text-[#680cdc] hover:underline transition-colors group">
+        <span class="">View All Articles</span>
+        <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a></div>
+
+    <!-- Main 2-Column Grid Layout: Article Feed (Left) & Sidebar (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+      <!-- Left Column: Article Feed (lg:col-span-8) -->
+      <div class="lg:col-span-8 flex flex-col space-y-8" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 16px;"><article class="flex flex-col md:flex-row gap-6 items-start pb-8 border-b-2 border-gray-200 group">
+  <img src="ancient-scroll-study-desk.jpg" alt="Ancient scroll and study desk" class="w-full md:w-44 h-44 rounded-md object-cover flex-shrink-0 group-hover:opacity-90 transition-opacity shadow-sm">
+  <div class="flex flex-col flex-1 min-w-0 justify-between h-full">
+    <div class="flex flex-wrap items-center gap-2.5 text-xs text-gray-500 mb-2 font-medium">
+      <div class="flex items-center gap-1 text-amber-500 font-semibold">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+        <span class="">4.8</span>
+      </div>
+      <span class="">•</span>
+      <div class="flex items-center gap-1 text-gray-500">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        <span class="">5 min read</span>
+      </div>
+      <span class="">•</span>
+      <span class="text-purple-700 font-semibold">By: Franklin Akwaa</span>
+      <span class="">•</span>
+      <span class="">March 24, 2026</span>
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug group-hover:text-[#7b16ff] transition-colors mb-2">
+      <a href="#" class="">Section 1.10.33 of 'de allow uro Bonorum et Malorum', written by Cicero in 45 BC</a>
+    </h3>
+    <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed line-clamp-2 mb-4">
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using classical reflection is that it anchors our perception through rigorous spiritual contemplation.
+    </p>
+    <div>
+      <a href="#" class="inline-block bg-[#7c1dc6] hover:bg-[#6814a8] text-white px-5 py-2 rounded text-xs sm:text-sm font-medium transition-colors shadow-sm" style="border-radius: 8px; background-color: rgb(131, 17, 210);">Read more</a>
+    </div>
+  </div>
+</article>
+
+<article class="flex flex-col md:flex-row gap-6 items-start pb-8 border-b-2 border-gray-200 group">
+  <img src="faith-discussion.jpg" alt="Open Bible study" class="w-full md:w-44 h-44 rounded-md object-cover flex-shrink-0 group-hover:opacity-90 transition-opacity shadow-sm">
+  <div class="flex flex-col flex-1 min-w-0 justify-between h-full">
+    <div class="flex flex-wrap items-center gap-2.5 text-xs text-gray-500 mb-2 font-medium">
+      <div class="flex items-center gap-1 text-amber-500 font-semibold">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+        <span class="">4.9</span>
+      </div>
+      <span class="">•</span>
+      <div class="flex items-center gap-1 text-gray-500">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        <span class="">7 min read</span>
+      </div>
+      <span class="">•</span>
+      <span class="text-purple-700 font-semibold">By: Pastor David Vance</span>
+      <span class="">•</span>
+      <span class="">March 21, 2026</span>
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug group-hover:text-[#7b16ff] transition-colors mb-2">
+      <a href="#" class="">Walking in Purpose: Navigating Seasons of Spiritual Growth</a>
+    </h3>
+    <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed line-clamp-2 mb-4">
+      When life transitions disrupt our familiar rhythms, how do we discern the gentle whisper of divine direction? Explore key biblical frameworks for turning seasons of uncertainty into endurance.
+    </p>
+    <div>
+      <a href="#" class="inline-block bg-[#7c1dc6] hover:bg-[#6814a8] text-white px-5 py-2 rounded text-xs sm:text-sm font-medium transition-colors shadow-sm" style="border-radius: 8px; background-color: rgb(131, 17, 210);">Read more</a>
+    </div>
+  </div>
+</article>
+
+<article class="flex flex-col md:flex-row gap-6 items-start pb-8 border-b-2 border-gray-200 group">
+  <img src="bible-study-journal.jpg" alt="Faith discussion and meditation" class="w-full md:w-44 h-44 rounded-md object-cover flex-shrink-0 group-hover:opacity-90 transition-opacity shadow-sm">
+  <div class="flex flex-col flex-1 min-w-0 justify-between h-full">
+    <div class="flex flex-wrap items-center gap-2.5 text-xs text-gray-500 mb-2 font-medium">
+      <div class="flex items-center gap-1 text-amber-500 font-semibold">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+        <span class="">4.7</span>
+      </div>
+      <span class="">•</span>
+      <div class="flex items-center gap-1 text-gray-500">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        <span class="">4 min read</span>
+      </div>
+      <span class="">•</span>
+      <span class="text-purple-700 font-semibold">By: Dr. Grace Mwangi</span>
+      <span class="">•</span>
+      <span class="">March 18, 2026</span>
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug group-hover:text-[#7b16ff] transition-colors mb-2">
+      <a href="#" class="">The Architecture of Faith: Deepening Daily Contemplation</a>
+    </h3>
+    <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed line-clamp-2 mb-4">
+      Building a resilient prayer life in a world overflowing with digital noise requires deliberate stillness. Discover ancient disciplines modernized for everyday disciples.
+    </p>
+    <div>
+      <a href="#" class="inline-block bg-[#7c1dc6] hover:bg-[#6814a8] text-white px-5 py-2 rounded text-xs sm:text-sm font-medium transition-colors shadow-sm" style="border-radius: 8px; background-color: rgb(131, 17, 210);">Read more</a>
+    </div>
+  </div>
+</article>
+
+<article class="flex flex-col md:flex-row gap-6 items-start pb-8 border-b-2 border-gray-200 group">
+  <img src="faith-discussion.jpg" alt="Prayer journal and coffee cup" class="w-full md:w-44 h-44 rounded-md object-cover flex-shrink-0 group-hover:opacity-90 transition-opacity shadow-sm">
+  <div class="flex flex-col flex-1 min-w-0 justify-between h-full">
+    <div class="flex flex-wrap items-center gap-2.5 text-xs text-gray-500 mb-2 font-medium">
+      <div class="flex items-center gap-1 text-amber-500 font-semibold">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+        <span class="">4.9</span>
+      </div>
+      <span class="">•</span>
+      <div class="flex items-center gap-1 text-gray-500">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        <span class="">6 min read</span>
+      </div>
+      <span class="">•</span>
+      <span class="text-purple-700 font-semibold">By: Pastor Sarah Jenkins</span>
+      <span class="">•</span>
+      <span class="">March 14, 2026</span>
+    </div>
+    <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug group-hover:text-[#7b16ff] transition-colors mb-2">
+      <a href="#" class="">Anchored in Steadfast Prayer: Practical Daily Rituals for Peace</a>
+    </h3>
+    <p class="text-xs sm:text-sm text-gray-600 font-light leading-relaxed line-clamp-2 mb-4">
+      Discover sustainable morning liturgies and evening gratitude practices that anchor anxious hearts during stormy personal and cultural seasons.
+    </p>
+    <div>
+      <a href="#" class="inline-block bg-[#7c1dc6] hover:bg-[#6814a8] text-white px-5 py-2 rounded text-xs sm:text-sm font-medium transition-colors shadow-sm" style="border-radius: 8px; background-color: rgb(131, 17, 210);">Read more</a>
+    </div>
+  </div>
+</article></div>
+
+      <!-- Right Column: Multi-Widget Sidebar (lg:col-span-4) -->
+      <aside class="lg:col-span-4 flex flex-col space-y-8 w-full">
+        <!-- Widget 1: Categories Widget -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-sm"><h3 class="text-base font-bold text-gray-900 tracking-tight mb-4 pb-3 border-b border-gray-100 uppercase text-xs" style="font-family: Montserrat, sans-serif;">Categories</h3><div class="flex flex-col space-y-2.5"><a href="#" class="border border-[#2F143F] text-[#2F143F] font-semibold py-2.5 px-4 text-center tracking-wider transition-colors duration-200 hover:bg-[#8311d2] hover:text-white hover:border-[#8311d2] cursor-pointer block text-xs uppercase" style="border-radius: 8px;">SERMONS &amp; TEACHINGS</a><a href="#" class="border border-[#2F143F] text-[#2F143F] font-semibold py-2.5 px-4 text-center tracking-wider transition-colors duration-200 hover:bg-[#8311d2] hover:text-white hover:border-[#8311d2] cursor-pointer block text-xs uppercase" style="border-radius: 8px;">FAITH &amp; PRAYER</a><a href="#" class="border border-[#2F143F] text-[#2F143F] font-semibold py-2.5 px-4 text-center tracking-wider transition-colors duration-200 hover:bg-[#8311d2] hover:text-white hover:border-[#8311d2] cursor-pointer block text-xs uppercase" style="border-radius: 8px;">CHRISTIAN LIVING</a><a href="#" class="border border-[#2F143F] text-[#2F143F] font-semibold py-2.5 px-4 text-center tracking-wider transition-colors duration-200 hover:bg-[#8311d2] hover:text-white hover:border-[#8311d2] cursor-pointer block text-xs uppercase" style="border-radius: 8px;">BIBLICAL LEADERSHIP</a></div></div>
+
+        <!-- Widget 2: Recommended Authors Widget -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200/80 shadow-sm"><div class="flex items-center justify-between mb-4 pb-2 border-b border-gray-100"><h3 class="font-bold text-lg text-gray-900 tracking-tight" style="font-family: Montserrat, sans-serif;">Recommended Authors</h3></div><div class="grid grid-cols-3 gap-3"><a href="#author-audio-profile" onclick="event.preventDefault(); alert('Routing to Pastor David Vance audio recordings and sermons archive...');" title="View audio recordings by Pastor David Vance" class="group block cursor-pointer text-center"><div class="relative aspect-square overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300" style="border-radius: 10px;"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&amp;auto=format&amp;fit=crop&amp;q=80" alt="Pastor David Vance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div><div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm border border-white/40 flex items-center justify-center text-white group-hover:bg-[#7c1dc6] group-hover:border-transparent group-hover:scale-110 transition-all"><svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div></div></div><span class="block text-[11px] font-bold text-gray-900 mt-1.5 truncate group-hover:text-[#7c1dc6] transition-colors">Pastor David Vance</span><span class="block text-[9px] text-gray-500 truncate -mt-0.5">Theology</span></a><a href="#author-audio-profile" onclick="event.preventDefault(); alert('Routing to Dr. Grace Mwangi audio recordings and sermons archive...');" title="View audio recordings by Dr. Grace Mwangi" class="group block cursor-pointer text-center"><div class="relative aspect-square overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300" style="border-radius: 10px;"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&amp;auto=format&amp;fit=crop&amp;q=80" alt="Dr. Grace Mwangi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div><div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm border border-white/40 flex items-center justify-center text-white group-hover:bg-[#7c1dc6] group-hover:border-transparent group-hover:scale-110 transition-all"><svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div></div></div><span class="block text-[11px] font-bold text-gray-900 mt-1.5 truncate group-hover:text-[#7c1dc6] transition-colors">Dr. Grace Mwangi</span><span class="block text-[9px] text-gray-500 truncate -mt-0.5">Counseling</span></a><a href="#author-audio-profile" onclick="event.preventDefault(); alert('Routing to Pastor Sarah Jenkins audio recordings and sermons archive...');" title="View audio recordings by Pastor Sarah Jenkins" class="group block cursor-pointer text-center"><div class="relative aspect-square overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300" style="border-radius: 10px;"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&amp;auto=format&amp;fit=crop&amp;q=80" alt="Pastor Sarah Jenkins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div><div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm border border-white/40 flex items-center justify-center text-white group-hover:bg-[#7c1dc6] group-hover:border-transparent group-hover:scale-110 transition-all"><svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div></div></div><span class="block text-[11px] font-bold text-gray-900 mt-1.5 truncate group-hover:text-[#7c1dc6] transition-colors">Pastor Sarah Jenkins</span><span class="block text-[9px] text-gray-500 truncate -mt-0.5">Discipleship</span></a><a href="#author-audio-profile" onclick="event.preventDefault(); alert('Routing to Franklin Akwaa audio recordings and sermons archive...');" title="View audio recordings by Franklin Akwaa" class="group block cursor-pointer text-center"><div class="relative aspect-square overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300" style="border-radius: 10px;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&amp;auto=format&amp;fit=crop&amp;q=80" alt="Franklin Akwaa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div><div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm border border-white/40 flex items-center justify-center text-white group-hover:bg-[#7c1dc6] group-hover:border-transparent group-hover:scale-110 transition-all"><svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div></div></div><span class="block text-[11px] font-bold text-gray-900 mt-1.5 truncate group-hover:text-[#7c1dc6] transition-colors">Franklin Akwaa</span><span class="block text-[9px] text-gray-500 truncate -mt-0.5">Senior Pastor</span></a><a href="#author-audio-profile" onclick="event.preventDefault(); alert('Routing to Rev. Michael Cole audio recordings and sermons archive...');" title="View audio recordings by Rev. Michael Cole" class="group block cursor-pointer text-center"><div class="relative aspect-square overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300" style="border-radius: 10px;"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&amp;auto=format&amp;fit=crop&amp;q=80" alt="Rev. Michael Cole" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div><div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm border border-white/40 flex items-center justify-center text-white group-hover:bg-[#7c1dc6] group-hover:border-transparent group-hover:scale-110 transition-all"><svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div></div></div><span class="block text-[11px] font-bold text-gray-900 mt-1.5 truncate group-hover:text-[#7c1dc6] transition-colors">Rev. Michael Cole</span><span class="block text-[9px] text-gray-500 truncate -mt-0.5">Evangelism</span></a><a href="#author-audio-profile" onclick="event.preventDefault(); alert('Routing to Dr. Ruth Adebayo audio recordings and sermons archive...');" title="View audio recordings by Dr. Ruth Adebayo" class="group block cursor-pointer text-center"><div class="relative aspect-square overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300" style="border-radius: 10px;"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&amp;auto=format&amp;fit=crop&amp;q=80" alt="Dr. Ruth Adebayo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div><div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm border border-white/40 flex items-center justify-center text-white group-hover:bg-[#7c1dc6] group-hover:border-transparent group-hover:scale-110 transition-all"><svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div></div></div><span class="block text-[11px] font-bold text-gray-900 mt-1.5 truncate group-hover:text-[#7c1dc6] transition-colors">Dr. Ruth Adebayo</span><span class="block text-[9px] text-gray-500 truncate -mt-0.5">Missions</span></a></div></div>
+
+        <!-- Widget 3: Featured Posts Widget -->
+        <div class="bg-[#2F143F] rounded-2xl p-6 shadow-xl text-white" style="background-color: rgb(47, 20, 63);"><h3 class="font-bold text-lg text-white mb-4 pb-3 border-b border-purple-800/60" style="font-family: Montserrat, sans-serif;">Featured Posts</h3><div class="flex flex-col space-y-4"><a href="#" class="flex items-center gap-3.5 pb-4 border-b border-purple-800/60 transition-all group"><img src="bible-study-journal.jpg" alt="Anchored in Steadfast Prayer" class="w-12 h-12 rounded object-cover flex-shrink-0"><div class="flex-1 min-w-0"><h4 class="text-sm font-semibold text-white group-hover:text-purple-300 line-clamp-2 transition-colors leading-snug">Anchored in Steadfast Prayer: Practical Daily Rituals</h4><span class="text-xs text-purple-200 mt-1 block font-normal">March 25, 2026 • 4 min</span></div></a><a href="#" class="flex items-center gap-3.5 pb-4 border-b border-purple-800/60 transition-all group"><img src="bible-headphones-course2.jpg" alt="The Biblical Heart for Servant Leadership and Humility" class="w-12 h-12 rounded object-cover flex-shrink-0"><div class="flex-1 min-w-0"><h4 class="text-sm font-semibold text-white group-hover:text-purple-300 line-clamp-2 transition-colors leading-snug">The Biblical Heart for Servant Leadership and Humility</h4><span class="text-xs text-purple-200 mt-1 block font-normal">March 22, 2026 • 6 min</span></div></a><a href="#" class="flex items-center gap-3.5 transition-all group"><img src="ancient-scroll-study-desk.jpg" alt="Guarding Your Mind Amidst Modern Digital Distractions" class="w-12 h-12 rounded object-cover flex-shrink-0"><div class="flex-1 min-w-0"><h4 class="text-sm font-semibold text-white group-hover:text-purple-300 line-clamp-2 transition-colors leading-snug">Guarding Your Mind Amidst Modern Digital Distractions</h4><span class="text-xs text-purple-200 mt-1 block font-normal">March 19, 2026 • 5 min</span></div></a></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+<!-- END: BlogAndArticlesSection --><footer class="border-t border-gray-200/80 pt-12" data-purpose="site-footer" style="background-color: rgb(246, 233, 255); border-color: rgba(47, 20, 63, 0.15);">
+<div class="max-w-7xl mx-auto px-6 sm:px-10 pb-12" style="max-width: 1280px;">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start justify-between">
+<!-- Left Side: Brand Logo, Slogan & Horizontal Subnav -->
+<div class="lg:col-span-6 flex flex-col">
+<!-- Logo & Tagline -->
+<div class="flex items-center gap-3 mb-6" data-purpose="footer-brand">
+<svg class="w-10 h-10 text-purple-600" fill="currentColor" viewBox="0 0 36 36">
+<path d="M18 2L20.8 11.2L30 14L20.8 16.8L18 26L15.2 16.8L6 14L15.2 11.2L18 2Z" fill="#7b16ff"></path>
+<circle cx="18" cy="18" fill="#49048a" r="4"></circle>
+</svg>
+<div>
+<span class="text-2xl font-bold tracking-tight text-purple-900">Success<span class="font-light text-gray-800">Life</span></span>
+<p class="text-[10px] uppercase font-bold tracking-widest text-gray-800 -mt-1">Your Way To Success</p>
+</div>
+</div>
+<div class="w-full max-w-sm border-t border-gray-200 mb-6"></div>
+<!-- Bottom Nav Links -->
+<div class="flex flex-wrap gap-5 text-xs font-semibold text-gray-800" style="font-size: 16px; font-family: &quot;Space Grotesk&quot;, sans-serif;">
+<a class="hover:text-purple-600 transition-colors" href="#">Home</a>
+<a class="hover:text-purple-600 transition-colors" href="#">Devotional</a>
+<a class="hover:text-purple-600 transition-colors" href="#">Courses</a>
+<a class="hover:text-purple-600 transition-colors" href="#">Podcast</a>
+<a class="hover:text-purple-600 transition-colors" href="#">Get App</a>
+</div>
+</div>
+<!-- Right Side: Subscribe Form & Social Media -->
+<div class="lg:col-span-6 flex flex-col items-start lg:items-end">
+<div class="w-full max-w-md">
+<h4 class="text-sm sm:text-base font-bold text-gray-900 mb-3">
+              Don't Miss A Beat, Subscribe Now
+            </h4>
+<!-- Subscription Input Group -->
+<form class="flex items-center gap-2 mb-6" data-purpose="newsletter-form" onsubmit="event.preventDefault();">
+<input class="flex-1 px-4 py-2.5 bg-gray-100 border border-gray-300 rounded-lg text-xs text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent placeholder-gray-400" placeholder="Enter email here" required="" type="email">
+<button class="px-5 py-2.5 bg-[#7b16ff] hover:bg-[#680cdc] text-white text-xs font-semibold rounded-lg shadow-sm transition-colors" type="submit" style="border-radius: 8px; background-color: rgb(131, 17, 210);">
+                Subscribe
+              </button>
+</form>
+<!-- Social Media Icon Buttons -->
+<div class="flex items-center gap-2.5 mb-2">
+<!-- Instagram -->
+<a aria-label="Instagram" class="w-8 h-8 rounded-full bg-[#7b16ff] text-white flex items-center justify-center hover:opacity-90 transition-opacity" href="#">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</a>
+<!-- YouTube -->
+<a aria-label="YouTube" class="w-8 h-8 rounded-full bg-[#7b16ff] text-white flex items-center justify-center hover:opacity-90 transition-opacity" href="#">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+</a>
+<!-- Facebook -->
+<a aria-label="Facebook" class="w-8 h-8 rounded-full bg-[#7b16ff] text-white flex items-center justify-center hover:opacity-90 transition-opacity" href="#">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.8C10.5 0 9 1.5 9 4.5V8z"></path>
+</svg>
+</a>
+<!-- Podcast / Audio RSS -->
+<a aria-label="Podcast" class="w-8 h-8 rounded-full bg-[#7b16ff] text-white flex items-center justify-center hover:opacity-90 transition-opacity" href="#">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+<path d="M12 1a5 5 0 0 0-5 5v6a5 5 0 0 0 10 0V6a5 5 0 0 0-5-5zm7 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V21H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 12z"></path>
+</svg>
+</a>
+</div>
+<p class="text-[11px] font-bold text-gray-900 tracking-wide mt-1">Connect With Us</p>
+</div>
+</div>
+</div>
+</div>
+<!-- BEGIN: CopyrightBottomBar -->
+<div class="w-full bg-[#49048a] text-purple-200 py-3.5 px-6 sm:px-10 text-xs">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3" style="max-width: 1280px;">
+<!-- Legal Nav Links -->
+<div class="flex items-center gap-4 text-[11px] sm:text-xs">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<span class="text-purple-400">|</span>
+<a class="hover:text-white transition-colors" href="#">Help</a>
+<span class="text-purple-400">|</span>
+<a class="hover:text-white transition-colors" href="#">Success Missions International</a>
+</div>
+<!-- Copyright Notice -->
+<p class="text-[11px] sm:text-xs text-purple-200">
+          ©2025 Success Life App | All Rights Reserved
+        </p>
+</div>
+</div>
+<!-- END: CopyrightBottomBar -->
+</footer><script id="header-scroll-script">window.addEventListener('scroll', function() { var header = document.getElementById('main-header'); if (!header) return; if (window.scrollY > 40) { header.style.paddingTop = '10px'; header.style.paddingBottom = '10px'; header.style.backgroundColor = 'rgba(27, 8, 46, 0.95)'; header.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.3)'; } else { header.style.paddingTop = '16px'; header.style.paddingBottom = '16px'; header.style.backgroundColor = 'rgba(0, 0, 0, 0.2)'; header.style.boxShadow = 'none'; } });</script>
+<!-- END: FooterNewsletterArea -->
+<!-- JAVASCRIPT: Dynamic Quote State, Rolling Archive, and Interactive Modal -->
+<script>
+  // Initial current day quote data
+  let currentActiveQuote = {
+    dayNum: "25",
+    dayWeek: "WED",
+    fullDate: "25th March, 2026",
+    quote: "Section 1.10.33 of 'de allow Bonorum et Malorum', written by Cicero in 45 BC",
+    author: "ANONYMOUS"
+  };
+
+  // Initial 5-day rolling archive
+  let archiveQuotes = [
+    {
+      id: "arc-1",
+      dayNum: "28",
+      dayWeek: "MON",
+      fullDate: "28th March, 2026",
+      quote: "Take God's Word with you wherever you go. His grace will never lead where His hand cannot keep you.",
+      author: "Martin Luther"
+    },
+    {
+      id: "arc-2",
+      dayNum: "29",
+      dayWeek: "TUE",
+      fullDate: "29th March, 2026",
+      quote: "The good news of the gospel is not that God turns away His gaze, but that He turns toward us in mercy.",
+      author: "Kojo Asante"
+    },
+    {
+      id: "arc-3",
+      dayNum: "30",
+      dayWeek: "WED",
+      fullDate: "30th March, 2026",
+      quote: "The will of God will never take you where the grace of God cannot protect you and sustain you.",
+      author: "SMI International"
+    },
+    {
+      id: "arc-4",
+      dayNum: "31",
+      dayWeek: "THU",
+      fullDate: "31th March, 2026",
+      quote: "God is most glorified in us when we are most satisfied and anchored in His constant presence.",
+      author: "Franklin Akwaa"
+    },
+    {
+      id: "arc-5",
+      dayNum: "24",
+      dayWeek: "SUN",
+      fullDate: "24th March, 2026",
+      quote: "Faith does not eliminate questions; but faith knows where to take them with a peaceful heart.",
+      author: "Elisabeth Elliot"
+    }
+  ];
+
+  // Pool of incoming future devotional quotes for rollover simulation
+  const upcomingDailyQuotes = [
+    {
+      dayNum: "26",
+      dayWeek: "THU",
+      fullDate: "26th March, 2026",
+      quote: "Peace is not the absence of trouble, but the steady presence of God in the middle of it.",
+      author: "J.I. PACKER"
+    },
+    {
+      dayNum: "27",
+      dayWeek: "FRI",
+      fullDate: "27th March, 2026",
+      quote: "Prayer does not fit us for the greater work; prayer is the greater work itself.",
+      author: "OSWALD CHAMBERS"
+    },
+    {
+      dayNum: "28",
+      dayWeek: "SAT",
+      fullDate: "28th March, 2026",
+      quote: "He who kneels before God can stand before anyone or anything in this world.",
+      author: "CORRIE TEN BOOM"
+    },
+    {
+      dayNum: "29",
+      dayWeek: "SUN",
+      fullDate: "29th March, 2026",
+      quote: "Look to Jesus in every trial; when we gaze at Him, our storms become holy opportunities.",
+      author: "CHARLES SPURGEON"
+    }
+  ];
+
+  let upcomingIndex = 0;
+  let activeModalQuote = null;
+
+  // Render the left active quote card
+  function renderActiveQuoteCard() {
+    const badgeEl = document.getElementById('today-badge-label');
+    const quoteEl = document.getElementById('today-quote-text');
+    const authorEl = document.getElementById('today-quote-author');
+
+    if (badgeEl) badgeEl.innerText = `Today's Quote - ${currentActiveQuote.fullDate}`;
+    if (quoteEl) quoteEl.innerText = `"${currentActiveQuote.quote}"`;
+    if (authorEl) authorEl.innerText = currentActiveQuote.author.toUpperCase();
+  }
+
+  // Render the archive list on the right column
+  function renderArchiveList() {
+    const listContainer = document.getElementById('archive-quote-list');
+    if (!listContainer) return;
+
+    listContainer.innerHTML = '';
+
+    archiveQuotes.slice(0, 5).forEach((item) => {
+      const row = document.createElement('div');
+      row.className = "flex items-center gap-3.5 group cursor-pointer p-1.5 -mx-1.5 rounded-xl hover:bg-purple-800/40 transition-all duration-150";
+      row.title = "Click to preview this quote in detail";
+      
+      row.innerHTML = `
+        <button type="button" aria-label="Open quote for ${item.dayNum} ${item.dayWeek}" class="w-12 h-12 rounded-xl bg-purple-900/90 border border-purple-700/60 hover:border-purple-400 group-hover:scale-105 flex flex-col items-center justify-center text-center flex-shrink-0 transition-transform shadow-inner">
+          <span class="text-sm font-bold leading-none text-white">${item.dayNum}</span>
+          <span class="text-[9px] uppercase tracking-wider text-purple-300 mt-0.5 font-semibold">${item.dayWeek}</span>
+        </button>
+        <div class="truncate flex-1">
+          <p class="text-xs sm:text-sm font-normal italic text-purple-100 truncate group-hover:text-white transition-colors">"${item.quote}"</p>
+          <p class="text-[11px] text-purple-300 font-medium mt-0.5">${item.author}</p>
+        </div>
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity pr-1 text-purple-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+      `;
+
+      row.addEventListener('click', () => {
+        openArchiveModal(item);
+      });
+
+      listContainer.appendChild(row);
+    });
+  }
+
+  // Open modal with identical active quote visual structure
+  function openArchiveModal(quoteData) {
+    activeModalQuote = quoteData;
+    const modal = document.getElementById('quote-modal');
+    const content = document.getElementById('quote-modal-content');
+    
+    document.getElementById('modal-date-badge').innerText = `Quote Archive - ${quoteData.fullDate}`;
+    document.getElementById('modal-quote-text').innerText = `"${quoteData.quote}"`;
+    document.getElementById('modal-quote-author').innerText = quoteData.author.toUpperCase();
+
+    modal.classList.remove('hidden');
+    // Animate in
+    setTimeout(() => {
+      modal.classList.remove('opacity-0');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+    }, 10);
+  }
+
+  function closeQuoteModal() {
+    const modal = document.getElementById('quote-modal');
+    const content = document.getElementById('quote-modal-content');
+    if (!modal) return;
+
+    modal.classList.add('opacity-0');
+    content.classList.remove('scale-100');
+    content.classList.add('scale-95');
+
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 200);
+  }
+
+  // Close modal when clicking outside of card
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('quote-modal');
+    if (e.target === modal) {
+      closeQuoteModal();
+    }
+  });
+
+  // Close modal on Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeQuoteModal();
+    }
+  });
+
+  // Automated Rotation / Day Rollover Simulation:
+  // Pushes the current active quote into top of archive, drops oldest to preserve rolling 5 items,
+  // and activates a fresh new daily quote on the left.
+  function simulateDayRollover() {
+    // Current active rolls into archive
+    const archivedItem = {
+      id: 'arc-' + Date.now(),
+      dayNum: currentActiveQuote.dayNum,
+      dayWeek: currentActiveQuote.dayWeek,
+      fullDate: currentActiveQuote.fullDate,
+      quote: currentActiveQuote.quote,
+      author: currentActiveQuote.author
+    };
+
+    archiveQuotes.unshift(archivedItem);
+    if (archiveQuotes.length > 5) {
+      archiveQuotes.pop(); // Keep to rolling 5
+    }
+
+    // Pick next incoming quote
+    const nextQuote = upcomingDailyQuotes[upcomingIndex % upcomingDailyQuotes.length];
+    upcomingIndex++;
+    currentActiveQuote = { ...nextQuote };
+
+    // Trigger visual updates with subtle feedback
+    const leftCard = document.querySelector('#quotes-section .quote-card-shadow');
+    if (leftCard) {
+      leftCard.classList.add('ring-2', 'ring-purple-400');
+      setTimeout(() => leftCard.classList.remove('ring-2', 'ring-purple-400'), 400);
+    }
+
+    renderActiveQuoteCard();
+    renderArchiveList();
+  }
+
+  // Initial initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    renderActiveQuoteCard();
+    renderArchiveList();
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BEGIN: Share Modal Component -->
+<div id="share-modal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-200 opacity-0 hidden">
+  <div id="share-modal-content" class="relative w-full max-w-md bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-2xl text-left transform transition-all duration-200 scale-95">
+    <button aria-label="Close share dialog" onclick="closeShareModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 p-1.5 rounded-full hover:bg-gray-100 transition-colors">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <div class="flex items-center gap-2 mb-2">
+      <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900" style="font-family: Montserrat, sans-serif;">Share Devotional Quote</h3>
+    </div>
+    <p id="share-preview-text" class="text-xs text-gray-600 mb-6 italic line-clamp-2 bg-purple-50/60 p-2.5 rounded-lg border border-purple-100">"Quote snippet..."</p>
+    
+    <!-- Social Grid -->
+    <div class="grid grid-cols-4 gap-3 mb-6 text-center">
+      <a id="share-btn-whatsapp" target="_blank" rel="noopener noreferrer" href="#" class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-gray-100 transition-colors group">
+        <div class="w-11 h-11 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium text-gray-700">WhatsApp</span>
+      </a>
+      <a id="share-btn-twitter" target="_blank" rel="noopener noreferrer" href="#" class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-gray-100 transition-colors group">
+        <div class="w-11 h-11 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium text-gray-700">X / Twitter</span>
+      </a>
+      <a id="share-btn-facebook" target="_blank" rel="noopener noreferrer" href="#" class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-gray-100 transition-colors group">
+        <div class="w-11 h-11 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium text-gray-700">Facebook</span>
+      </a>
+      <a id="share-btn-sms" href="#" class="flex flex-col items-center gap-1.5 p-2 rounded-xl hover:bg-gray-100 transition-colors group">
+        <div class="w-11 h-11 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <svg class="w-5 h-5 fill-none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium text-gray-700">SMS</span>
+      </a>
+    </div>
+
+    <!-- Link Copy Bar -->
+    <div class="space-y-3">
+      <div class="flex items-center gap-2 p-1.5 bg-gray-100 rounded-xl border border-gray-200">
+        <input id="share-link-input" readonly="" value="https://www.successlife.app/" class="flex-1 bg-transparent px-2.5 py-1 text-xs text-gray-700 font-mono outline-none border-0 focus:ring-0">
+        <button id="copy-share-btn" onclick="handleCopyShareLink()" class="px-4 py-1.5 rounded-lg bg-[#7b16ff] hover:bg-[#680cdc] text-white text-xs font-semibold shadow-sm transition-all inline-flex items-center gap-1.5 flex-shrink-0">
+          <svg id="copy-icon-svg" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span id="copy-btn-text" class="">Copy Link</span>
+        </button>
+      </div>
+      <button type="button" onclick="triggerNativeShareFromModal()" class="w-full py-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-800 text-xs font-semibold transition-colors border border-purple-200 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span class="">More Sharing Options (Device Share)</span>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- END: Share Modal Component -->
+
+<!-- Toast Notification -->
+<div id="action-toast" class="fixed bottom-6 right-6 z-50 bg-gray-900/95 backdrop-blur-md text-white px-5 py-3 rounded-xl shadow-2xl border border-purple-500/30 flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
+  <div class="w-6 h-6 rounded-full bg-[#7b16ff] flex items-center justify-center flex-shrink-0 text-white">
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </div>
+  <span id="action-toast-msg" class="text-xs sm:text-sm font-medium">Quote card downloaded!</span>
+</div><div id="share-modal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-200 opacity-0 hidden"><div id="share-modal-content" class="relative w-full max-w-md bg-white rounded-2xl p-6 border border-gray-100 shadow-2xl text-left transform transition-all duration-200 scale-95"><div class="flex items-center justify-between pb-3 border-b border-gray-100"><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-purple-100 text-[#7b16ff] flex items-center justify-center font-bold"><svg class="w-4 h-4 fill-none stroke-currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><h3 class="text-base font-bold text-gray-900">Share Daily Quote</h3></div><button type="button" onclick="closeShareModal()" aria-label="Close share modal" class="text-gray-400 hover:text-gray-700 p-1.5 rounded-full hover:bg-gray-100 transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div><div class="mt-4 mb-5 p-3.5 bg-purple-50 rounded-xl border border-purple-100"><p id="share-preview-text" class="text-xs text-gray-700 italic leading-relaxed line-clamp-3"></p></div><div class="grid grid-cols-4 gap-2.5 mb-5"><a id="share-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-1.5 p-2 rounded-xl border border-gray-200 hover:bg-purple-50 transition-colors text-center"><div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">WA</div><span class="text-[10px] font-medium text-gray-700">WhatsApp</span></a><a id="share-x-link" href="#" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-1.5 p-2 rounded-xl border border-gray-200 hover:bg-purple-50 transition-colors text-center"><div class="w-9 h-9 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-xs">X</div><span class="text-[10px] font-medium text-gray-700">X / Post</span></a><a id="share-facebook-link" href="#" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-1.5 p-2 rounded-xl border border-gray-200 hover:bg-purple-50 transition-colors text-center"><div class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">FB</div><span class="text-[10px] font-medium text-gray-700">Facebook</span></a><a id="share-sms-link" href="#" class="flex flex-col items-center gap-1.5 p-2 rounded-xl border border-gray-200 hover:bg-purple-50 transition-colors text-center"><div class="w-9 h-9 rounded-full bg-purple-100 text-[#7b16ff] flex items-center justify-center font-bold text-xs">SMS</div><span class="text-[10px] font-medium text-gray-700">Message</span></a></div><div class="flex items-center gap-2 pt-3 border-t border-gray-100"><button type="button" onclick="handleCopyShareLink()" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold transition-colors"><svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>Copy Text</button><button type="button" onclick="triggerNativeShareFromModal()" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-lg bg-[#7b16ff] hover:bg-[#680cdc] text-white text-xs font-semibold shadow-sm transition-colors">More Options</button></div></div></div><div id="toast-container" class="fixed bottom-6 right-6 z-50 pointer-events-none flex flex-col gap-2"></div><script id="quote-canvas-and-share-logic">
+function showToast(msg) {
+  var container = document.getElementById('toast-container');
+  if (!container) return;
+  var toast = document.createElement('div');
+  toast.className = 'px-4 py-2.5 rounded-xl bg-gray-900/95 text-white text-xs font-medium shadow-xl backdrop-blur-md border border-purple-500/30 transition-all duration-300 transform translate-y-4 opacity-0 flex items-center gap-2';
+  toast.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>' + msg + '</span>';
+  container.appendChild(toast);
+  setTimeout(function() {
+    toast.classList.remove('translate-y-4', 'opacity-0');
+  }, 10);
+  setTimeout(function() {
+    toast.classList.add('opacity-0', 'translate-y-2');
+    setTimeout(function() { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 300);
+  }, 3200);
+}
+
+function renderQuoteCardCanvas(quoteText, authorName, dateLabel) {
+  var canvas = document.createElement('canvas');
+  canvas.width = 1200;
+  canvas.height = 675;
+  var ctx = canvas.getContext('2d');
+  if (!ctx) return canvas;
+
+  // Background gradient
+  var bgGrad = ctx.createLinearGradient(0, 0, 1200, 675);
+  bgGrad.addColorStop(0, '#fbfaff');
+  bgGrad.addColorStop(1, '#f3edfa');
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, 1200, 675);
+
+  // Inner card shadow
+  ctx.save();
+  ctx.shadowColor = 'rgba(47, 20, 63, 0.08)';
+  ctx.shadowBlur = 40;
+  ctx.shadowOffsetY = 15;
+
+  // Inner white card
+  var cardX = 100, cardY = 55, cardW = 1000, cardH = 565, cardR = 24;
+  ctx.beginPath();
+  ctx.moveTo(cardX + cardR, cardY);
+  ctx.lineTo(cardX + cardW - cardR, cardY);
+  ctx.quadraticCurveTo(cardX + cardW, cardY, cardX + cardW, cardY + cardR);
+  ctx.lineTo(cardX + cardW, cardY + cardH - cardR);
+  ctx.quadraticCurveTo(cardX + cardW, cardY + cardH, cardX + cardW - cardR, cardY + cardH);
+  ctx.lineTo(cardX + cardR, cardY + cardH);
+  ctx.quadraticCurveTo(cardX, cardY + cardH, cardX, cardY + cardH - cardR);
+  ctx.lineTo(cardX, cardY + cardR);
+  ctx.quadraticCurveTo(cardX, cardY, cardX + cardR, cardY);
+  ctx.closePath();
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  ctx.restore();
+
+  // Top decorative colored bar on card
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(cardX, cardY, cardW, 10);
+  ctx.fillStyle = '#7b16ff';
+  ctx.fill();
+  ctx.restore();
+
+  // Date badge pill
+  if (dateLabel) {
+    ctx.save();
+    var badgeText = dateLabel.toUpperCase();
+    ctx.font = '600 14px sans-serif';
+    var badgeMetrics = ctx.measureText(badgeText);
+    var badgeW = badgeMetrics.width + 30;
+    var badgeH = 30;
+    var badgeX = 600 - badgeW / 2;
+    var badgeY = cardY + 36;
+    ctx.fillStyle = '#f3e8ff';
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(badgeX, badgeY, badgeW, badgeH, 15) : ctx.rect(badgeX, badgeY, badgeW, badgeH);
+    ctx.fill();
+    ctx.fillStyle = '#49048a';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(badgeText, 600, badgeY + badgeH / 2);
+    ctx.restore();
+  }
+
+  // Large decorative quotation mark
+  ctx.save();
+  ctx.fillStyle = '#e9d5ff';
+  ctx.font = 'bold 120px Georgia, serif';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  ctx.fillText('“', cardX + 60, cardY + 70);
+  ctx.restore();
+
+  // Quote body text wrapping
+  ctx.save();
+  ctx.fillStyle = '#1e293b';
+  ctx.font = 'bold 34px Montserrat, -apple-system, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  var maxWidth = 840;
+  var cleanQuote = quoteText.replace(/^[“"]|[”"]$/g, '');
+  var words = cleanQuote.split(' ');
+  var lines = [];
+  var currentLine = '';
+
+  for (var i = 0; i < words.length; i++) {
+    var testLine = currentLine ? (currentLine + ' ' + words[i]) : words[i];
+    if (ctx.measureText(testLine).width > maxWidth && i > 0) {
+      lines.push(currentLine);
+      currentLine = words[i];
+    } else {
+      currentLine = testLine;
+    }
+  }
+  if (currentLine) lines.push(currentLine);
+
+  var lineHeight = 48;
+  var totalTextH = lines.length * lineHeight;
+  var startY = 320 - (totalTextH / 2);
+  for (var j = 0; j < lines.length; j++) {
+    ctx.fillText(lines[j], 600, startY + (j * lineHeight));
+  }
+  ctx.restore();
+
+  // Author divider and label
+  ctx.save();
+  var dividerY = startY + totalTextH + 28;
+  ctx.fillStyle = '#7b16ff';
+  ctx.fillRect(570, dividerY, 60, 4);
+
+  ctx.fillStyle = '#0f172a';
+  ctx.font = 'bold 16px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  ctx.letterSpacing = '2px';
+  ctx.fillText((authorName || 'ANONYMOUS').toUpperCase(), 600, dividerY + 16);
+  ctx.restore();
+
+  // Bottom attribution footer
+  ctx.save();
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '500 13px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'bottom';
+  ctx.fillText('https://www.successlife.app/ • SuccessLife Daily Devotion', 600, cardY + cardH - 24);
+  ctx.restore();
+
+  return canvas;
+}
+
+function handleDownloadQuote() {
+  var quoteEl = document.getElementById('today-quote-text');
+  var authorEl = document.getElementById('today-quote-author');
+  var badgeEl = document.getElementById('today-badge-label');
+
+  var quoteText = (quoteEl ? quoteEl.innerText : '') || (window.currentActiveQuote ? window.currentActiveQuote.quote : "Anchored in Grace");
+  var authorName = (authorEl ? authorEl.innerText : '') || (window.currentActiveQuote ? window.currentActiveQuote.author : "ANONYMOUS");
+  var dateLabel = (badgeEl ? badgeEl.innerText : '') || "SuccessLife Daily Quote";
+
+  var canvas = renderQuoteCardCanvas(quoteText, authorName, dateLabel);
+  var link = document.createElement('a');
+  link.download = 'successlife-daily-quote.png';
+  link.href = canvas.toDataURL('image/png');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  showToast('Quote card downloaded to your device!');
+}
+
+var currentSharePayload = { text: '', quote: '', author: '', url: '' };
+
+function handleShareQuote() {
+  var quoteEl = document.getElementById('today-quote-text');
+  var authorEl = document.getElementById('today-quote-author');
+  var quoteText = (quoteEl ? quoteEl.innerText : '') || (window.currentActiveQuote ? ('"' + window.currentActiveQuote.quote + '"') : '');
+  var authorName = (authorEl ? authorEl.innerText : '') || (window.currentActiveQuote ? window.currentActiveQuote.author : 'SuccessLife');
+  var pageUrl = window.location.href;
+
+  currentSharePayload.quote = quoteText;
+  currentSharePayload.author = authorName;
+  currentSharePayload.url = pageUrl;
+  currentSharePayload.text = quoteText + ' — ' + authorName + ' (via ' + pageUrl + ')';
+
+  var previewEl = document.getElementById('share-preview-text');
+  if (previewEl) previewEl.innerText = quoteText + ' — ' + authorName;
+
+  var encText = encodeURIComponent(currentSharePayload.text);
+  var encUrl = encodeURIComponent(pageUrl);
+
+  var waLink = document.getElementById('share-whatsapp-link');
+  if (waLink) waLink.href = 'https://api.whatsapp.com/send?text=' + encText;
+
+  var xLink = document.getElementById('share-x-link');
+  if (xLink) xLink.href = 'https://twitter.com/intent/tweet?text=' + encText;
+
+  var fbLink = document.getElementById('share-facebook-link');
+  if (fbLink) fbLink.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encUrl + '&quote=' + encText;
+
+  var smsLink = document.getElementById('share-sms-link');
+  if (smsLink) smsLink.href = 'sms:?&body=' + encText;
+
+  var modal = document.getElementById('share-modal');
+  var content = document.getElementById('share-modal-content');
+  if (modal && content) {
+    modal.classList.remove('hidden');
+    setTimeout(function() {
+      modal.classList.remove('opacity-0');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+    }, 10);
+  }
+}
+
+function closeShareModal() {
+  var modal = document.getElementById('share-modal');
+  var content = document.getElementById('share-modal-content');
+  if (!modal || !content) return;
+  modal.classList.add('opacity-0');
+  content.classList.remove('scale-100');
+  content.classList.add('scale-95');
+  setTimeout(function() {
+    modal.classList.add('hidden');
+  }, 200);
+}
+
+function handleCopyShareLink() {
+  var text = currentSharePayload.text || ((document.getElementById('today-quote-text') ? document.getElementById('today-quote-text').innerText : '') + ' ' + window.location.href);
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Quote copied to clipboard!');
+      closeShareModal();
+    }).catch(function() {
+      showToast('Copied to clipboard!');
+      closeShareModal();
+    });
+  } else {
+    showToast('Quote ready to share!');
+    closeShareModal();
+  }
+}
+
+function triggerNativeShareFromModal() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'SuccessLife Daily Devotion',
+      text: currentSharePayload.text,
+      url: currentSharePayload.url
+    }).then(function() {
+      closeShareModal();
+    }).catch(function() {});
+  } else {
+    handleCopyShareLink();
+  }
+}
+
+function handleModalDownload() {
+  var quoteEl = document.getElementById('modal-quote-text');
+  var authorEl = document.getElementById('modal-quote-author');
+  var badgeEl = document.getElementById('modal-date-badge');
+
+  var quoteText = quoteEl ? quoteEl.innerText : 'SuccessLife Archive Quote';
+  var authorName = authorEl ? authorEl.innerText : 'ANONYMOUS';
+  var dateLabel = badgeEl ? badgeEl.innerText : 'SuccessLife Archive';
+
+  var canvas = renderQuoteCardCanvas(quoteText, authorName, dateLabel);
+  var link = document.createElement('a');
+  link.download = 'successlife-archive-quote.png';
+  link.href = canvas.toDataURL('image/png');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  showToast('Archive quote card downloaded!');
+}
+
+function handleModalShare() {
+  var quoteEl = document.getElementById('modal-quote-text');
+  var authorEl = document.getElementById('modal-quote-author');
+  var quoteText = quoteEl ? quoteEl.innerText : '';
+  var authorName = authorEl ? authorEl.innerText : '';
+  currentSharePayload.quote = quoteText;
+  currentSharePayload.author = authorName;
+  currentSharePayload.url = window.location.href;
+  currentSharePayload.text = quoteText + ' — ' + authorName + ' (via ' + window.location.href + ')';
+
+  var previewEl = document.getElementById('share-preview-text');
+  if (previewEl) previewEl.innerText = quoteText + ' — ' + authorName;
+
+  var encText = encodeURIComponent(currentSharePayload.text);
+  var encUrl = encodeURIComponent(currentSharePayload.url);
+
+  var waLink = document.getElementById('share-whatsapp-link');
+  if (waLink) waLink.href = 'https://api.whatsapp.com/send?text=' + encText;
+  var xLink = document.getElementById('share-x-link');
+  if (xLink) xLink.href = 'https://twitter.com/intent/tweet?text=' + encText;
+  var fbLink = document.getElementById('share-facebook-link');
+  if (fbLink) fbLink.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encUrl + '&quote=' + encText;
+  var smsLink = document.getElementById('share-sms-link');
+  if (smsLink) smsLink.href = 'sms:?&body=' + encText;
+
+  var modal = document.getElementById('share-modal');
+  var content = document.getElementById('share-modal-content');
+  if (modal && content) {
+    modal.classList.remove('hidden');
+    setTimeout(function() {
+      modal.classList.remove('opacity-0');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+    }, 10);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+</body></html>
